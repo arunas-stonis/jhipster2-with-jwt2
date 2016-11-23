@@ -26,6 +26,7 @@ import {
 import { localStorageConfig } from './blocks/config/localstorage.config';
 import { HttpInterceptor } from './blocks/interceptor/http.interceptor';
 import {AuthExpiredInterceptor} from "./blocks/interceptor/auth-expired.interceptor";
+import {AuthInterceptor} from "./blocks/interceptor/auth.interceptor";
 import {Http, XHRBackend, RequestOptions} from "@angular/http";
 
 
@@ -86,9 +87,9 @@ let routerConfig = {
             deps: [
                 XHRBackend,
                 RequestOptions,
-                Injector,
                 LocalStorageService,
-                SessionStorageService
+                SessionStorageService,
+                Injector
             ]
         }
     ],
